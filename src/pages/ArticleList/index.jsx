@@ -7,6 +7,7 @@ import { useModel } from 'umi';
 const ContainerHeight = document.body.scrollHeight - 260;
 
 const App = () => {
+  const [isData, setIsData] = useState(true);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(3);
 
@@ -36,11 +37,14 @@ const App = () => {
     console.log(e.currentTarget.scrollTop);
     console.log(document.body.scrollHeight);
     if (e.currentTarget.scrollHeight - e.currentTarget.scrollTop === ContainerHeight) {
-      if (total / pageSize <= page) {
-        message.info('没有更多了');
-        return;
+      if (isData) {
+        if (total / pageSize <= page) {
+          message.info('没有更多了');
+          setIsData(false);
+          return;
+        }
+        setPage((pre) => pre + 1);
       }
-      setPage((pre) => pre + 1);
     }
   };
 
