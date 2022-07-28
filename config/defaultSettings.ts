@@ -14,6 +14,8 @@ const Settings: LayoutSettings & {
   colorWeak: false,
   title: 'Ant Design Pro',
   pwa: false,
+  // footerRender: false,
+  // menuRender: false,
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   iconfontUrl: '',
 };
