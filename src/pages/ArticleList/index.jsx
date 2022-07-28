@@ -1,7 +1,7 @@
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
 import { Avatar, List, message, Space } from 'antd';
 import VirtualList from 'rc-virtual-list';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useModel } from 'umi';
 
 const ContainerHeight = document.body.scrollHeight - 260;
@@ -9,7 +9,9 @@ const ContainerHeight = document.body.scrollHeight - 260;
 const App = () => {
   const [isData, setIsData] = useState(true);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(3);
+  const [pageSize, setPageSize] = useState(10);
+  const [height, setHeight] = useState(window.innerHeight);
+  const listHeight = useRef();
 
   const { articleList, getArticle, total, loading } = useModel('article', (model) => ({
     loading: model.loading,
@@ -33,16 +35,19 @@ const App = () => {
   );
 
   const onScroll = (e) => {
-    console.log(e.currentTarget.scrollHeight);
-    console.log(e.currentTarget.scrollTop);
-    console.log(document.body.scrollHeight);
-    if (e.currentTarget.scrollHeight - e.currentTarget.scrollTop === ContainerHeight) {
+    let clientHeight = e.currentTarget.clientHeight; //可视区域高度
+    let scrollTop = e.currentTarget.scrollTop; //滚动条滚动高度
+    let scrollHeight = e.currentTarget.scrollHeight; //滚动内容高度
+    console.log(clientHeight, scrollTop, scrollHeight);
+    if (clientHeight + scrollTop === scrollHeight) {
+      console.log(111);
       if (isData) {
         if (total / pageSize <= page) {
           message.info('没有更多了');
           setIsData(false);
           return;
         }
+        setHeight(e.currentTarget.scrollHeight);
         setPage((pre) => pre + 1);
       }
     }
@@ -55,11 +60,12 @@ const App = () => {
       dataSource={articleList}
       footer={false}
       loading={loading}
+      ref={listHeight}
     >
       <VirtualList
         data={articleList}
-        height={ContainerHeight}
-        itemHeight={47}
+        height={window.innerHeight - 230}
+        itemHeight={5}
         itemKey="email"
         onScroll={onScroll}
       >
