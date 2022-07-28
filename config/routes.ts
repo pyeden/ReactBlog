@@ -43,8 +43,14 @@
     component: './TableList',
   },
   {
+    name: '文章列表',
+    icon: 'table',
+    path: '/home',
+    component: './ArticleList',
+  },
+  {
     path: '/',
-    redirect: '/welcome',
+    redirect: '/home',
   },
   {
     component: './404',
