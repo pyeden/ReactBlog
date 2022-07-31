@@ -63,6 +63,7 @@ const App = () => {
       ref={listHeight}
     >
       <VirtualList
+        className={'rc-virtual-list-scrollbar_1 rc-virtual-list-scrollbar-show_1'}
         data={articleList}
         height={window.innerHeight - 230}
         itemHeight={5}
