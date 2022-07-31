@@ -1,8 +1,8 @@
-import { QuestionCircleOutlined } from '@ant-design/icons';
-import { SelectLang, useModel } from '@umijs/max';
+import { useModel } from '@umijs/max';
 import { Space } from 'antd';
 import React from 'react';
 import HeaderSearch from '../HeaderSearch';
+import NoticeIconView from '../NoticeIcon';
 import Avatar from './AvatarDropdown';
 import styles from './index.less';
 
@@ -23,6 +23,7 @@ const GlobalHeaderRight: React.FC = () => {
   }
   return (
     <Space className={className}>
+      {/* 搜索 */}
       <HeaderSearch
         className={`${styles.action} ${styles.search}`}
         placeholder="站内搜索"
@@ -46,16 +47,28 @@ const GlobalHeaderRight: React.FC = () => {
         //   console.log('input', value);
         // }}
       />
-      <span
+
+      {/* 帮助 */}
+      {/* <span
         className={styles.action}
         onClick={() => {
           window.open('https://pro.ant.design/docs/getting-started');
         }}
       >
         <QuestionCircleOutlined />
+      </span> */}
+
+      {/* 通知 */}
+      <span>
+        <NoticeIconView />
       </span>
+
+      {/* 头像 */}
       <Avatar />
-      <SelectLang className={styles.action} />
+      <span></span>
+
+      {/* 语言切换 */}
+      {/* <SelectLang className={styles.action} /> */}
     </Space>
   );
 };
