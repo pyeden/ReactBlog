@@ -1,5 +1,5 @@
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
-import { Avatar, Image, List, message, Space } from 'antd';
+import { Avatar, List, message, Space } from 'antd';
 import VirtualList from 'rc-virtual-list';
 import React, { useEffect, useRef, useState } from 'react';
 import { useModel } from 'umi';
@@ -79,7 +79,7 @@ const App = () => {
               <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
             ]}
             extra={
-              <Image
+              <img
                 width={272}
                 alt="logo"
                 src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"

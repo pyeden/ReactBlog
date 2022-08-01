@@ -37,6 +37,12 @@
     component: './ArticleList',
   },
   {
+    name: '文章详情',
+    icon: 'table',
+    path: '/article/detail',
+    component: './ArticleDetail',
+  },
+  {
     component: './404',
   },
 ];
