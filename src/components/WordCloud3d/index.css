@@ -1,0 +1,23 @@
+.wordCloud__tagBall {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+}
+
+.wordCloud__tag {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  color: green;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: '微软雅黑';
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wordCloud__tag:hover {
+  color: red !important;
+}

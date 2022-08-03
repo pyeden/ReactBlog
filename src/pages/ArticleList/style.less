@@ -248,3 +248,85 @@
     }
   }
 }
+
+/* 容器 */
+.container {
+  box-sizing: border-box;
+  width: 120rem;
+  height: 67.5rem;
+  padding: 0 2.9375rem;
+  color: #fff;
+  font-family: '方正兰亭粗黑', Microsoft YaHei, '微软雅黑';
+  background: no-repeat;
+  // background-image: url(./static/images/title.png), url(./static/images/left.png),
+  // url(./static/images/right.png);
+  background-position: left top, left 6.4375rem, right 6.4375rem;
+  background-size: 120rem 8.0625rem, 2.125rem 58.75rem, 2.125rem 58.75rem;
+}
+
+/* top50词云 */
+.wordcloud {
+  width: 30rem;
+  height: 18.66rem;
+  margin: 0.8rem auto 0;
+  overflow: hidden;
+}
+
+.word-cloud-wrap {
+  width: 32rem;
+  height: 24.125rem;
+  margin-top: 1.8125rem;
+  background: no-repeat;
+  // background-image: url(./static/images/word_cloud.png);
+  background-size: 100% 100%;
+}
+
+#wordcloud {
+  background: no-repeat;
+  // background-image: url(./static/images/cloud.png);
+  background-size: 27.1875rem 16.9375rem;
+}
+
+/* 3d词云 */
+.tagBall {
+  position: relative;
+  width: 100%;
+  height: 24.125rem;
+  margin: 0 auto;
+  background: transparent no-repeat;
+  // background-image: url(@/static/images/cloud.png);
+  background-size: 100% auto;
+}
+
+.tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.tag .value-tag {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 110%;
+  display: none !important;
+  display: block;
+  width: max-content;
+  height: 35px;
+  margin: auto;
+  padding: 0 30px 0 20px;
+  color: #f6f600;
+  font-size: 14px;
+  line-height: 35px;
+  background-image: linear-gradient(90deg, rgba(216, 255, 0, 0.7) 0%, rgba(58, 51, 255, 0) 100%);
+}
+
+.tag:hover .value-tag {
+  display: block !important;
+  opacity: 1 !important;
+}

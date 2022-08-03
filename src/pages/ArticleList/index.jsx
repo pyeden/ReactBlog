@@ -1,3 +1,4 @@
+import WordCloud from '@/components/WordCloud3d';
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
 import { Avatar, Card, Col, Image, Link, List, message, Row, Space } from 'antd';
 import VirtualList from 'rc-virtual-list';
@@ -88,6 +89,24 @@ const App = () => {
           style={{
             marginBottom: 10,
           }}
+          title={null}
+          bordered={false}
+          bodyStyle={{
+            padding: 0,
+          }}
+        >
+          <div
+            style={{
+              height: '300px',
+            }}
+          >
+            <WordCloud />
+          </div>
+        </Card>
+        <Card
+          style={{
+            marginBottom: 10,
+          }}
           title="导航栏"
           bordered={false}
           bodyStyle={{
@@ -96,18 +115,7 @@ const App = () => {
         >
           <EditableLinkGroup onAdd={() => {}} links={links} linkElement={Link} />
         </Card>
-        <Card
-          style={{
-            marginBottom: 10,
-          }}
-          title="标签云"
-          bordered={false}
-          bodyStyle={{
-            padding: 0,
-          }}
-        >
-          <EditableLinkGroup onAdd={() => {}} links={links} linkElement={Link} />
-        </Card>
+
         <Card
           style={{
             marginBottom: 10,

@@ -52,3 +52,29 @@ ol {
 .rc-virtual-list-scrollbar-thumb {
   background: none !important;
 }
+
+.wordCloud__tagBall {
+  position: relative;
+  margin: 50px auto;
+}
+
+.wordCloud__tag {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  color: green;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: '微软雅黑';
+  text-decoration: none;
+
+  & > hover {
+    color: red;
+  }
+}
+
+.wordCloud__home {
+  display: flex;
+  justify-content: center;
+}
